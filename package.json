@@ -5,6 +5,10 @@
 	"description": "",
 	"license": "MIT",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gleiss/vscode-rapid"
+	},
 	"engines": {
 		"vscode": "^1.32.0"
 	},
