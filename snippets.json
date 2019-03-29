@@ -1,0 +1,137 @@
+{
+	"AssertNot": {
+		"prefix": "ass",
+		"body": [
+			"(assert-not",
+			"\t$0",
+			")"
+		],
+		"description": "smtlib assert-not"
+	},
+
+	"Assert": {
+		"prefix": "ass",
+		"body": [
+			"(assert",
+			"\t$0",
+			")"
+		],
+		"description": "smtlib assert"
+	},
+
+	"Conjunction": {
+		"prefix": "and",
+		"body": [
+			"(and",
+			"\t$0",
+			")"
+		],
+		"description": "smtlib conjunction"
+	},
+
+	"Disjunction": {
+		"prefix": "or",
+		"body": [
+			"(or",
+			"\t$0",
+			")"
+		],
+		"description": "smtlib disjunction"
+	},
+
+	"Implication": {
+		"prefix": "implies",
+		"body": [
+			"(=>",
+			"\t$0",
+			")"
+		],
+		"description": "smtlib implication"
+	},
+
+	"Negation": {
+		"prefix": "not",
+		"body": [
+			"(not",
+			"\t$0",
+			")"
+		],
+		"description": "smtlib negation"
+	},
+
+	"Forall": {
+		"prefix": "forall",
+		"body": [
+			"(forall ((${1:name} ${2:type}))",
+			"\t$0",
+			")"
+		],
+		"description": "smtlib forall"
+	},
+
+	"Exists": {
+		"prefix": "exists",
+		"body": [
+			"(exists ((${1:name} ${2:type}))",
+			"\t$0",
+			")"
+		],
+		"description": "smtlib exists"
+	},
+
+	"Equality": {
+		"prefix": "equality",
+		"body": [
+			"(= $0)"
+		],
+		"description": "smtlib equality"
+	},
+
+	"Main function": {
+		"prefix": "main",
+		"body": [
+			"func main()",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "rapid main function"
+	},
+
+	"Custom function": {
+		"prefix": "func",
+		"body": [
+			"func ${1:name}()",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "rapid custom function"
+	},
+
+	"IfElse Statement": {
+		"prefix": "if",
+		"body": [
+			"if (${1:condition})",
+			"{",
+			"\t$0",
+			"}",
+			"else",
+			"{",
+			"\t",
+			"}"
+		],
+		"description": "rapid IfElse"
+	},
+
+	"While Statement": {
+		"prefix": "while",
+		"body": [
+			"while (${1:condition})",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "rapid While"
+	}
+}
