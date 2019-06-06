@@ -1,60 +1,85 @@
 {
 	"scopeName": "source.rapid",
-	"patterns": [{ "include": "#expression" }],
+	"patterns": [
+		{
+			"include": "#expression"
+		}
+	],
 	"repository": {
-	  "expression": {
-		"patterns": [
-			{ "include": "#constant-numeric" },
-			{ "include": "#comment-line" },
-			{ "include": "#program-control" }, 
-			{ "include": "#program-function" }, 
-			{ "include": "#program-function-name" }, 
-			{ "include": "#program-type" },
-			{ "include": "#smtlib-control" },
-			{ "include": "#smtlib-connective" },
-			{ "include": "#paren-expression" }
-		]
-	  },
-	  "constant-numeric": {
-		"match": "0|1|2|3|4|5|6|7|8|9|0",
-		"name": "constant.numeric"
-	  },
-	  "comment-line": {
-		"match": "\/\/.*",
-		"name": "comment.line"
-	  },
-	  "program-control": {
-		"match": "if|else|while",
-		"name": "keyword.control.flow"
-	  },
-	  "program-function": {
-		"match": "func",
-		"name": "storage.type.function"
-	  },
-	  "program-type": {
-		"match": "Int|Bool|const",
-		"name": "support.type"
-	  },
-	  "smtlib-control": {
-		"match": "\bassert\b|assert-not",
-		"name": "keyword.control.flow"
-	  },
-	  "smtlib-connective": {
-		"match": "and|or|\bnot\b|=>|forall|exists",
-		"name": "support.type"
-	  },
-
-	  "paren-expression": {
-		"begin": "\\(",
-		"end": "\\)",
-		"beginCaptures": {
-		  "0": { "name": "punctuation.paren.open" }
+		"expression": {
+			"patterns": [
+				{
+					"include": "#constant-numeric"
+				},
+				{
+					"include": "#comment-line"
+				},
+				{
+					"include": "#program-control"
+				},
+				{
+					"include": "#program-function"
+				},
+				{
+					"include": "#program-function-name"
+				},
+				{
+					"include": "#program-type"
+				},
+				{
+					"include": "#smtlib-control"
+				},
+				{
+					"include": "#smtlib-connective"
+				},
+				{
+					"include": "#paren-expression"
+				}
+			]
 		},
-		"endCaptures": {
-		  "0": { "name": "punctuation.paren.close" }
+		"constant-numeric": {
+			"match": "\\d",
+			"name": "constant.numeric"
 		},
-		"name": "expression.group",
-		"patterns": [{ "include": "#expression" }]
-	  }
+		"comment-line": {
+			"match": "\/\/.*",
+			"name": "comment.line"
+		},
+		"program-control": {
+			"match": "if|else|while",
+			"name": "keyword.control.flow"
+		},
+		"program-function": {
+			"match": "func",
+			"name": "storage.type.function"
+		},
+		"program-type": {
+			"match": "Int|Bool|const",
+			"name": "support.type"
+		},
+		"smtlib-control": {
+			"match": "assert\n|assert-not\n",
+			"name": "keyword.control.flow"
+		},
+		"paren-expression": {
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.paren.open"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.paren.close"
+				}
+			},
+			"name": "expression.group",
+			"patterns": [
+				{
+					"include": "#expression"
+				}
+			]
+		}
 	}
-  }
+}
